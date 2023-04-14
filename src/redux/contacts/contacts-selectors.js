@@ -11,3 +11,12 @@ export const getFilteredContacts = ({ contacts, filter }) => {
   });
   return result;
 };
+
+// export const getFilteredContacts = state => {
+//   const { filter, contacts } = state;
+//   const normalizedFilter = filter.toLowerCase().trim();
+
+//   return contacts.items.filter(({ name }) =>
+//     name.toLowerCase().includes(normalizedFilter),
+//   );
+// };

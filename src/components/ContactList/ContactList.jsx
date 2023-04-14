@@ -34,6 +34,40 @@ function ContactList() {
   return <ul>{contactsList}</ul>;
 }
 
+// function ContactList() {
+//     const visibleContacts = useSelector(getFilteredContacts);
+//     const dispatch = useDispatch();
+  
+//     if (!visibleContacts) {
+//       return null;
+//     }
+  
+//     const contactsList = visibleContacts.map(({ id, name, phone }) => (
+//       <ul className={css.contactList}>
+//         <li className={css.wrapper} key={id}>
+//           <span className={css.icon}>
+//             <FaUserAlt />
+//           </span>
+//           <span className={css.span}>
+//             {name}: {phone}
+//           </span>
+//           <div>
+//             <button
+//               className={css.button}
+//               id={id}
+//               type="button"
+//               onClick={() => dispatch(removeContact(id))}
+//             >
+//               <FaTrash />
+//             </button>
+//           </div>
+//         </li>
+//       </ul>
+//     ));
+  
+//     return <ul>{contactsList}</ul>;
+//   }
+
 ContactList.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
