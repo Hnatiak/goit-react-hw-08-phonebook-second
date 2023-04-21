@@ -2,20 +2,7 @@ import { connect } from "react-redux";
 import authSelectors from "../redux/filter/filter-selectors";
 import authOperations from "../redux/filter/filter-operations";
 import { Button } from '@mui/material';
-
-const styles = {
-  container: {
-    display: "flex",
-    alignItems: "center",
-  },
-  mail: {
-    marginRight: 10,
-  },
-  name: {
-    fontWeight: 700,
-    marginRight: 20,
-  },
-};
+import styles from './UserMenu.module.css';
 
 const UserMenu = ({ mail, name, onLogout }) => (
   <div style={styles.container}>

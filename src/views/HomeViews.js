@@ -1,18 +1,5 @@
-const styles = {
-    container: {
-      fontFamily: "Roboto",
-      minHeight: "calc(100hv - 50px)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    title: {
-      fontWeight: 500,
-      fontSize: 48,
-      textAlign: "center",
-    },
-  };
-  
+import styles from './HomeViews.module.css'
+
   const HomeView = () => (
     <div style={styles.container}>
       <h1 style={styles.title}>As you see, here is empty</h1>

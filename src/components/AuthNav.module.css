@@ -1,0 +1,11 @@
+.link {
+   margin: 5;
+    display: "block";
+    color: "white";
+}
+
+.activeLink {
+     margin: 5;
+     display: "block";
+     color: "red";
+}

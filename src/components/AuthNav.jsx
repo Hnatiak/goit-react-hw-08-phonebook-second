@@ -1,17 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Button } from '@mui/material';
-const styles = {
-  link: {
-    margin: 5,
-    display: "block",
-    color: "white",
-  },
-  activeLink: {
-    margin: 5,
-    display: "block",
-    color: "red",
-  },
-};
+import styles from './AuthNav.module.css';
 
 const AuthNav = () => (
   <div>
@@ -23,7 +12,8 @@ const AuthNav = () => (
     >
       <NavLink
         to="/register"
-        exact
+        // exact="true"
+        // exact="true" or exact={value.toString()}.
         style={styles.link}
         activeStyle={styles.activeLink}
       >
@@ -38,7 +28,7 @@ const AuthNav = () => (
     >
       <NavLink
         to="/login"
-        exact
+        // exact="true"
         style={styles.link}
         activeStyle={styles.activeLink}
       >

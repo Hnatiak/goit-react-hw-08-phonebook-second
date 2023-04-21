@@ -3,17 +3,7 @@ import { connect } from "react-redux";
 import authOperations from "../redux/contacts/contacts-operations";
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: 15,
-  },
-};
+import styles from "./LoginViews.module.css";
 
 class LoginView extends Component {
   state = {

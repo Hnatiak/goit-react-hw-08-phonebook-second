@@ -1,0 +1,13 @@
+.container {
+  font-family: "Roboto";
+  min-height: calc(100hv - 50px);
+  display: "flex";
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 48;
+    text-align: center;
+}
