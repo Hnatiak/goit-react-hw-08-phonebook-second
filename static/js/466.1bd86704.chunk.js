@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[466],{5466:function(e,t,n){n.r(t);var i=n(3329),l={container:{fontFamily:"Roboto",minHeight:"calc(100hv - 50px)",display:"flex",justifyContent:"center",alignItems:"center"},title:{fontWeight:500,fontSize:48,textAlign:"center"}};t.default=function(){return(0,i.jsx)("div",{style:l.container,children:(0,i.jsx)("h1",{style:l.title,children:"As you see, here is empty"})})}}}]);
-//# sourceMappingURL=466.1bd86704.chunk.js.map
