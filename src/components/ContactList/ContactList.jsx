@@ -51,7 +51,7 @@ class ContactList extends Component {
         <li key={contact.id} id={contact.id}>
           <Button
             // style={{ marginLeft: 25, height: 30, margin: 5 }}
-            activeStyle={css.button_second}
+            className={css.button_second}
             data-id={contact.id}
             variant="contained"
             color="primary"

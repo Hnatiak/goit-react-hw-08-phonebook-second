@@ -32,7 +32,7 @@ class LoginView extends Component {
 
         <form
           onSubmit={this.handleSubmit}
-          activeStyle={styles.form}
+          className={styles.form}
           autoComplete="off"
         >
           <TextField
@@ -51,7 +51,7 @@ class LoginView extends Component {
           />
           <br />
           <Button
-            activeStyle={styles.button}
+            className={styles.button}
             type="submit"
             variant="contained"
             color="primary"

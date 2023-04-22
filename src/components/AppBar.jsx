@@ -38,7 +38,7 @@ import { connect } from "react-redux";
 import authSelectors from "../redux/filter/filter-selectors";
 
 const AppBar = ({ isAuthenticated }) => (
-  <header style={css.header}>
+  <header className={css.header}>
     <Navigation />
     {isAuthenticated ? <UserMenu /> : <AuthNav />}
   </header>

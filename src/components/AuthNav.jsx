@@ -7,28 +7,28 @@ const AuthNav = () => (
     <Button
       type="click"
       variant="contained"
-      activeStyle={styles.button}
+      className={styles.button}
     >
       <NavLink
         to="/register"
-        // exact="true"
+        exact="true"
         // exact="true" or exact={value.toString()}.
         // style={styles.link}
-        activeStyle={styles.activeLink}
+        className={styles.activeLink}
       >
         Registration
       </NavLink>
     </Button>
     <Button
-      activeStyle={styles.button}
+      className={styles.button}
       type="click"
       variant="contained"
     >
       <NavLink
         to="/login"
-        // exact="true"
+        exact="true"
         // style={styles.link}
-        activeStyle={styles.activeLink}
+        className={styles.activeLink}
       >
         Login
       </NavLink>

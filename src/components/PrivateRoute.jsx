@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Route, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom'; //Route
 import authSelectors from "../redux/filter/filter-selectors";
 
 export default function PrivateRoute({
@@ -8,11 +8,10 @@ export default function PrivateRoute({
   ...routeProps
 }) {
   const isLoggedIn = useSelector(authSelectors.isAuthenticated);
-  return (
-    <Route {...routeProps}>
-      {isLoggedIn ? children : <Navigate to={redirectTo} />}
-    </Route>
-  );
+  // return (
+  //   <Route {...routeProps}>
+  //     {isLoggedIn ? children : <Navigate to={redirectTo} />}
+  //   </Route>
+  // );
+  return isLoggedIn ? children : <Navigate to="/login" />;
 }
-
-// LAGSS WITH GITHUB

@@ -102,7 +102,7 @@ class App extends Component {
         <AppBar />
         <Suspense fallback={<p>Loading...</p>}>
           <Routes>
-            <Route path="/" component={HomeView} /> 
+            <Route path="/" exact="true" component={HomeView} /> 
             {/* //exact="true" */}
             <PublicRoute path="/register" redirectTo="/contacts" restricted>
               <Route path="/register" component={RegisterView} />
@@ -116,6 +116,29 @@ class App extends Component {
           </Routes>
         </Suspense>
       </div>
+
+    // return (
+    //   <div className="App">
+    //     <AppBar />
+    //     <Suspense fallback={<p>Loading...</p>}>
+    //       <Routes>
+    //         <Route
+    //           path="users"
+    //           element={
+    //             <PublicRoute path="/register" redirectTo="/contacts" restricted>
+    //               <Route path="/register" component={RegisterView} />
+    //             </PublicRoute>
+    //             <PublicRoute path="/login" redirectTo="/contacts" restricted>
+    //               <Route path="/login" component={LoginView} />
+    //             </PublicRoute>
+    //             <PrivateRoute>
+    //                <Route path="/contacts" component={ContactsView} />
+    //             </PrivateRoute>
+    //           }
+    //         />
+    //       </Routes>
+    //     </Suspense>
+    //   </div>
     );
   }
 }

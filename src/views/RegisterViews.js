@@ -127,7 +127,7 @@ import { connect } from "react-redux";
 import authOperations from "../redux/filter/filter-operations";
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
-import styles from "./RegisterViews.module.css";
+// import styles from "./RegisterViews.module.css";
 
 class RegisterView extends Component {
   state = {
@@ -153,11 +153,11 @@ class RegisterView extends Component {
 
     return (
       <div>
-        <h1 style={{ fontFamily: "Roboto" }}>Registration</h1>
+        <h1>Registration</h1>
 
         <form
           onSubmit={this.handleSubmit}
-          style={styles.form}
+          // style={styles.form}
           autoComplete="off"
         >
           <TextField
@@ -184,7 +184,7 @@ class RegisterView extends Component {
           />
           <br />
           <Button
-            style={{ marginTop: 25 }}
+            // style={{ marginTop: 25 }}
             type="submit"
             variant="contained"
             color="primary"

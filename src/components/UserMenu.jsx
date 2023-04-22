@@ -5,15 +5,15 @@ import { Button } from '@mui/material';
 import styles from './UserMenu.module.css';
 
 const UserMenu = ({ mail, name, onLogout }) => (
-  <div activeStyle={styles.container}>
+  <div className={styles.container}>
     {/* style={styles.container} */}
-    <span activeStyle={styles.mail}>User e-mail: {mail}</span>
-    <span activeStyle={styles.name}>User name: {name}</span>
+    <span className={styles.mail}>User e-mail: {mail}</span>
+    <span className={styles.name}>User name: {name}</span>
     <Button
       type="button"
       onClick={onLogout}
       variant="contained"
-      activeStyle={styles.activeLink}
+      className={styles.activeLink}
       // color="primary"
     >
       Logout 🟥

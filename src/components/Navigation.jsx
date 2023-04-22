@@ -7,16 +7,16 @@ import styles from "./Navigation.module.css";
 
 const Navigation = ({ isAuthenticated }) => (
   <nav>
-    <NavLink to="/" exact activeStyle={styles.activeLink}> 
+    <NavLink to="/" exact='true' className={styles.activeLink}> 
     {/* //style={styles.link} */}
       Home
     </NavLink>
     {isAuthenticated && (
       <NavLink
         to="/contacts"
-        // exact="true"
+        exact="true"
         // style={styles.link}
-        activeStyle={styles.activeLink}
+        className={styles.activeLink}
       >
         Contacts
       </NavLink>
