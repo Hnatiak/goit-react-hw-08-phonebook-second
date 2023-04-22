@@ -128,7 +128,8 @@ class ContactForm extends Component {
           />
           <br />
           <Button
-            style={{ marginTop: 25 }}
+            // style={{ marginTop: 25 }}
+            activeStyle={style.button_second}
             type="submit"
             variant="contained"
             color="primary"

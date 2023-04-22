@@ -53,3 +53,9 @@
     cursor: pointer;
     transition: background-color var(--main-hover-animation);
   }
+
+.button_second {
+  margin-left: 25px;
+  height: 30;
+  margin: 5px;
+}

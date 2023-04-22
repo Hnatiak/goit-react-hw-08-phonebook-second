@@ -102,7 +102,8 @@ class App extends Component {
         <AppBar />
         <Suspense fallback={<p>Loading...</p>}>
           <Routes>
-            <Route exact path="/" component={HomeView} />
+            <Route path="/" component={HomeView} /> 
+            {/* //exact="true" */}
             <PublicRoute path="/register" redirectTo="/contacts" restricted>
               <Route path="/register" component={RegisterView} />
             </PublicRoute>

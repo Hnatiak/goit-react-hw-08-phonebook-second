@@ -4,6 +4,12 @@
     color: "white";
 }
 
+.button {
+     height: 30;
+     color: primary;
+     margin-left: 15px;
+}
+
 .activeLink {
      margin: 5;
      display: "block";

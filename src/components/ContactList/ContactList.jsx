@@ -38,6 +38,8 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 import { Button } from '@mui/material';
+import css from './ContactList.module.css'
+
 
 class ContactList extends Component {
   deleteId = (Id) => {
@@ -48,7 +50,8 @@ class ContactList extends Component {
       return (
         <li key={contact.id} id={contact.id}>
           <Button
-            style={{ marginLeft: 25, height: 30, margin: 5 }}
+            // style={{ marginLeft: 25, height: 30, margin: 5 }}
+            activeStyle={css.button_second}
             data-id={contact.id}
             variant="contained"
             color="primary"

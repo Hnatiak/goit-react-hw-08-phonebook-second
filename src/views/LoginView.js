@@ -28,11 +28,11 @@ class LoginView extends Component {
 
     return (
       <div>
-        <h1 style={{ fontFamily: "Roboto" }}>Login</h1>
+        <h1>Login</h1>
 
         <form
           onSubmit={this.handleSubmit}
-          style={styles.form}
+          activeStyle={styles.form}
           autoComplete="off"
         >
           <TextField
@@ -51,7 +51,7 @@ class LoginView extends Component {
           />
           <br />
           <Button
-            style={{ marginTop: 25 }}
+            activeStyle={styles.button}
             type="submit"
             variant="contained"
             color="primary"

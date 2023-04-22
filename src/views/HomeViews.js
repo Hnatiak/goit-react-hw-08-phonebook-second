@@ -1,8 +1,8 @@
 import styles from './HomeViews.module.css'
 
   const HomeView = () => (
-    <div style={styles.container}>
-      <h1 style={styles.title}>As you see, here is empty</h1>
+    <div activeStyle={styles.container}>
+      <h1 activeStyle={styles.title}>As you see, here is empty</h1>
     </div>
   );
   

@@ -7,14 +7,15 @@ import styles from "./Navigation.module.css";
 
 const Navigation = ({ isAuthenticated }) => (
   <nav>
-    <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
+    <NavLink to="/" exact activeStyle={styles.activeLink}> 
+    {/* //style={styles.link} */}
       Home
     </NavLink>
     {isAuthenticated && (
       <NavLink
         to="/contacts"
         // exact="true"
-        style={styles.link}
+        // style={styles.link}
         activeStyle={styles.activeLink}
       >
         Contacts
