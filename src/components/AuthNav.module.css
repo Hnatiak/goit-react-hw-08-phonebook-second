@@ -14,5 +14,11 @@
 .activeLink {
      margin: 5;
      display: "block";
-     color: "red";
+     /* color: white; */
 }
+
+/* .activeLink:hover {
+     margin: 5;
+     display: "block";
+     color: black;
+} */
