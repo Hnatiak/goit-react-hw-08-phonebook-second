@@ -264,7 +264,7 @@ class App extends Component {
             </Route>
           </Routes> */}
 
-              <Routes>
+            <Routes>
               <Route path="/" exact='true' element={<HomePage />}>
                 <Route
                   index

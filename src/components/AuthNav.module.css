@@ -4,11 +4,12 @@
     color: "white";
 }
 
-.button {
-     height: 30;
-     color: primary;
-     margin-left: 15px;
-}
+/* .button { */
+     /* height: 30; */
+     /* color: 'primary'; */
+     /* margin-left: 15px; */
+     /* margin-right: 15px; */
+/* } */
 
 .activeLink {
      margin: 5;

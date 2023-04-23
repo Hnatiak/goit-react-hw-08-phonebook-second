@@ -20,7 +20,7 @@
 
 // // export default function AppBar() {
 // //     return (
-// //         <header className='header'>
+// //         <header className={css.header}>
 // //             <Navigation/>
 // //             <AuthNav/>
 // //             {/* <UserMenu/> */}
@@ -39,8 +39,13 @@ import authSelectors from "../redux/auth/auth-selectors";
 
 const AppBar = ({ isAuthenticated }) => (
   <header className={css.header}>
+    <h1 className={css.title}>
+    Phone<span className={css.title__color}>book</span>
+    </h1>
     <Navigation />
-    {isAuthenticated ? <UserMenu /> : <AuthNav />}
+    <div className={css.button}>
+      {isAuthenticated ? <UserMenu /> : <AuthNav />}
+    </div>
   </header>
 );
 const mapStateToProps = (state) => ({
