@@ -30,8 +30,8 @@ import {
   REGISTER,
 } from "redux-persist";
 
-import appReducer from "./contacts/contacts-reducer";
-import authReducer from "./filter/filter-reducer";
+import appReducer from "./app/app-reducer";
+import authReducer from "./auth/auth-reducer";
 
 
 const middleware = [

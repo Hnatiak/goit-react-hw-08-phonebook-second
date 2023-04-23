@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import authOperations from "../redux/contacts/contacts-operations";
+import authOperations from "../redux/app/app-operations";
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
 import styles from "./LoginViews.module.css";
@@ -68,8 +68,8 @@ const mapDispatchToProps = {
   onLogin: authOperations.logIn,
 };
 //Full version
-/* const mapDispatchToProps = dispatch=>{
-  onSubmit: (data)=>dispatch (authOperations.register(data))
-} */
+// const mapDispatchToProps = dispatch=>{
+//   onSubmit: (data)=>dispatch (authOperations.register(data))
+// }
 
 export default connect(null, mapDispatchToProps)(LoginView);

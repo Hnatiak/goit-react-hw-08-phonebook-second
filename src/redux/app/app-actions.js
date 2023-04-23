@@ -15,6 +15,18 @@ const fetchContactError = createAction("contacts/fetchContactError");
 const filterSet = createAction("app/setFilterArr");
 
 
+// export default {
+//   filterSet,
+//   addContactRequest,
+//   addContactSuccess,
+//   addContactError,
+//   deleteContactRequest,
+//   deleteContactSuccess,
+//   deleteContactError,
+//   fetchContactRequest,
+//   fetchContactSuccess,
+//   fetchContactError,
+// }
 
 const contactsActions = {
   filterSet,

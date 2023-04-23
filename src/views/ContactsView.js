@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import ContactForm from "../components/ContactForm/ContactForm";
 import ContactList from "../components/ContactList/ContactList";
 import Filter from "../components/Filter/Filter";
-import appActions from "../redux/contacts/contacts-actions";
-import appOperations from "../redux/contacts/contacts-operations";
+import appActions from "../redux/app/app-actions";
+import appOperations from "../redux/app/app-operations";
 import { connect } from "react-redux";
-import selectors from "../redux/contacts/contacts-selectors";
+import selectors from "../redux/app/app-selectors";
 import styles from "./ContactsView.module.css";
 
 class ContactsView extends Component {

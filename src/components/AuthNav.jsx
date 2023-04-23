@@ -13,7 +13,7 @@ const AuthNav = () => (
         to="/register"
         exact="true"
         // exact="true" or exact={value.toString()}.
-        // style={styles.link}
+        // style={styles.activeLink}
         className={styles.activeLink}
       >
         Registration
@@ -27,7 +27,7 @@ const AuthNav = () => (
       <NavLink
         to="/login"
         exact="true"
-        // style={styles.link}
+        // style={styles.activeLink}
         className={styles.activeLink}
       >
         Login

@@ -1,5 +1,5 @@
 import axios from "axios";
-import actions from "./contacts-actions";
+import actions from "./app-actions";
 
 //ASYNC Version
 const fetchContacts = () => async (dispatch) => {

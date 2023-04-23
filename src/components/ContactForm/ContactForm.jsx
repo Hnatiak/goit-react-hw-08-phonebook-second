@@ -104,7 +104,7 @@ class ContactForm extends Component {
   };
   render() {
     return (
-      <div className={style.contactform}>
+      <div className={style.form}>
         <form type="submit" onSubmit={this.handleSubmit}>
           <TextField
             label="Name:"
@@ -128,7 +128,6 @@ class ContactForm extends Component {
           />
           <br />
           <Button
-            // style={{ marginTop: 25 }}
             className={style.button_second}
             type="submit"
             variant="contained"

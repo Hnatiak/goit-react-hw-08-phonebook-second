@@ -124,7 +124,7 @@
 
 import { Component } from "react";
 import { connect } from "react-redux";
-import authOperations from "../redux/filter/filter-operations";
+import authOperations from "../redux/auth/auth-operations";
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
 // import styles from "./RegisterViews.module.css";

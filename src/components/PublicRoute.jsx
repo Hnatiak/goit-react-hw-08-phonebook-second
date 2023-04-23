@@ -22,7 +22,7 @@
 
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom"; //Route,
-import selectIsLoggedIn from "../redux/filter/filter-selectors";
+import selectIsLoggedIn from "../redux/auth/auth-selectors";
 
 // export default function PublicRoute({
 //   children,
