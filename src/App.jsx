@@ -72,7 +72,7 @@ class App extends Component {
                   }
                 />
                 <Route
-                  path="/users"
+                  path="/contacts"
                   element={
                     <PrivateRoute>
                       <UsersPage path="/contacts" component={UsersPage}/>

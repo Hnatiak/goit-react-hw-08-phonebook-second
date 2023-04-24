@@ -6,7 +6,7 @@ import appActions from "../redux/app/app-actions";
 import appOperations from "../redux/app/app-operations";
 import { connect } from "react-redux";
 import selectors from "../redux/app/app-selectors";
-import styles from "./ContactsView.module.css";
+// import styles from "./ContactsView.module.css";
 
 class ContactsView extends Component {
   componentDidMount() {
@@ -15,13 +15,13 @@ class ContactsView extends Component {
 
   render() {
     return (
-      <div className="contacts">
-        <h1 className={styles.title}>
-         Phone<span className={styles.title__color}>book</span>
-       </h1>
+      <div className="contacts" style={{ marginTop: 100 }}>
+        {/* <h1 className={styles.title}>
+         {/* Phone<span className={styles.title__color}>book</span>
+       </h1> */}
         {this.props.isLoadingContacts && <h2>Loading ...</h2>}
         <ContactForm onSubmitData={this.props.formSubmitHandler} />
-        <h1>Contacts</h1>
+        <h1 style={{ marginBottom: 25 }}>Contacts</h1>
         <Filter setFilterToState={this.props.filterSet} />
         <ContactList
           contacts={this.props.visibleArray}

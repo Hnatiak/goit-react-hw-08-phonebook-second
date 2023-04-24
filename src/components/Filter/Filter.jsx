@@ -39,7 +39,7 @@ class Filter extends Component {
   render() {
     return (
       <div>
-        <TextField label="Filter" onChange={this.setFilterValue} />
+        <TextField label="Filter" onChange={this.setFilterValue} style={{ marginBottom: 25 }}/>
       </div>
     );
   }

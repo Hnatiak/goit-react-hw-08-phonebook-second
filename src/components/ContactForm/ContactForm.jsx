@@ -115,6 +115,7 @@ class ContactForm extends Component {
             required
             onChange={this.handleChange}
             value={this.state.name}
+            style={{ marginRight: 25 }}
           />
           <TextField
             label="Number:"
@@ -132,6 +133,7 @@ class ContactForm extends Component {
             type="submit"
             variant="contained"
             color="primary"
+            style={{ marginTop: 25 }}
           >
             Add contact
           </Button>
