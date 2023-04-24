@@ -152,17 +152,17 @@ class RegisterView extends Component {
     const { name, email, password } = this.state;
 
     return (
-      <div style={{ marginTop: "35px" }}>
-        <h1>Registration</h1>
+      <div style={{ marginTop: "35px", width: '320px' }}>
+        <h1 style={{ marginBottom: "35px" }}>Registration</h1>
 
         <form
-          style={{ marginTop: "25px" }}
+          style={{ marginBottom: "15px" }}
           onSubmit={this.handleSubmit}
           // style={styles.form}
           autoComplete="off"
         >
           <TextField
-            style={{ marginRight: "10px" }}
+            style={{ marginBottom: "15px" }}
             label="Name:"
             type="text"
             name="name"
@@ -171,7 +171,7 @@ class RegisterView extends Component {
           />
 
           <TextField
-            style={{ marginRight: "10px" }}
+            style={{ marginBottom: "15px" }}
             label="E-mail:"
             type="email"
             name="email"
