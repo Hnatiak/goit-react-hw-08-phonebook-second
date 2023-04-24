@@ -65,7 +65,7 @@ const styles = {
 
 const UserMenu = ({ mail, name, onLogout }) => (
   <div style={styles.container}>
-    <span style={styles.mail}>User e-mail: {mail}</span>
+    {/* <span style={styles.mail}>User e-mail: {mail}</span> */}
     <span style={styles.name}>User name: {name}</span>
     <Button
       type="button"
