@@ -73,7 +73,7 @@ const UserMenu = ({ mail, name, onLogout }) => (
       variant="contained"
       color="primary"
     >
-      Logout 🟥
+      Logout ❌
     </Button>
   </div>
 );
