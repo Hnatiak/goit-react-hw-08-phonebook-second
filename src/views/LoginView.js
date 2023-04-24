@@ -27,15 +27,17 @@ class LoginView extends Component {
     const { email, password } = this.state;
 
     return (
-      <div>
+      <div style={{ marginTop: "35px" }}>
         <h1>Login</h1>
 
         <form
+          style={{ marginTop: "25px" }}
           onSubmit={this.handleSubmit}
           className={styles.form}
           autoComplete="off"
         >
           <TextField
+            style={{ marginRight: "10px" }}
             label="E-mail:"
             type="email"
             name="email"
@@ -56,7 +58,7 @@ class LoginView extends Component {
             variant="contained"
             color="primary"
           >
-            SIGN IN 🟩
+            SIGN IN ✅
           </Button>
         </form>
       </div>

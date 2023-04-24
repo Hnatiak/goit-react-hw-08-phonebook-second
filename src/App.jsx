@@ -278,7 +278,7 @@ class App extends Component {
                   path="users"
                   element={
                     <PrivateRoute>
-                      <UsersPage path="/login" component={UsersPage}/>
+                      <UsersPage path="/users" component={UsersPage}/>
                     </PrivateRoute>
                   }
                 />
