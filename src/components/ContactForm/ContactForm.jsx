@@ -105,6 +105,7 @@ class ContactForm extends Component {
   render() {
     return (
       <div className={style.form}>
+        <h1 style={{ marginBottom: 25 }}>Add contact</h1>
         <form type="submit" onSubmit={this.handleSubmit}>
           <TextField
             label="Name:"

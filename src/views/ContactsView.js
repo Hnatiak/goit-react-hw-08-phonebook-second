@@ -15,7 +15,7 @@ class ContactsView extends Component {
 
   render() {
     return (
-      <div className="contacts" style={{ marginTop: 100 }}>
+      <div className="contacts" style={{ marginTop: 65 }}>
         {/* <h1 className={styles.title}>
          {/* Phone<span className={styles.title__color}>book</span>
        </h1> */}
