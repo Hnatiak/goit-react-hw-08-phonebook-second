@@ -162,7 +162,7 @@ class RegisterView extends Component {
           autoComplete="off"
         >
           <TextField
-            style={{ marginBottom: "15px" }}
+            style={{ marginBottom: "15px", width: 300 }}
             label="Name:"
             type="text"
             name="name"
@@ -171,7 +171,7 @@ class RegisterView extends Component {
           />
 
           <TextField
-            style={{ marginBottom: "15px" }}
+            style={{ marginBottom: "15px", width: 300 }}
             label="E-mail:"
             type="email"
             name="email"
@@ -179,6 +179,7 @@ class RegisterView extends Component {
             onChange={this.handleChange}
           />
           <TextField
+            style={{ width: 300}}
             label="Password:"
             type="password"
             name="password"

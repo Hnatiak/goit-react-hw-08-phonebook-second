@@ -166,7 +166,7 @@ class LoginView extends Component {
             variant="contained"
             color="primary"
           >
-            SIGN IN 🟩
+            SIGN IN ✅
           </Button>
         </form>
       </div>
