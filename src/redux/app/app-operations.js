@@ -11,13 +11,29 @@ const fetchContacts = () => async (dispatch) => {
     dispatch(actions.deleteContactError(error.message));
   }
 };
-const addContact = (contact) => (dispatch) => {
+
+const addContact = (contact) => async (dispatch) => {
   dispatch(actions.addContactRequest());
 
-  axios
-    .post("/contacts", contact)
-    .then(({ data }) => dispatch(actions.addContactSuccess(data)))
-    .catch((error) => dispatch(actions.addContactError(error.message)));
+  try {
+    // Send a GET request to retrieve the current list of contacts
+    const { data } = await axios.get("/contacts");
+
+    // Check if the new contact already exists in the list based on phone number
+    const existingContact = data.find((c) => c.number === contact.number);
+    if (existingContact) {
+      dispatch(
+        actions.addContactError("A contact with this phone number already exists!")
+      );
+      return;
+    }
+
+    // Send a POST request to create the new contact
+    const response = await axios.post("/contacts", contact);
+    dispatch(actions.addContactSuccess(response.data));
+  } catch (error) {
+    dispatch(actions.addContactError(error.message));
+  }
 };
 
 const deleteContact = (contactId) => (dispatch) => {

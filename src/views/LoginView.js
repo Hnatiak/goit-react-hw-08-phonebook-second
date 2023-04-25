@@ -76,6 +76,26 @@
 
 // export default connect(null, mapDispatchToProps)(LoginView);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import authOperations from "../redux/auth/auth-operations";
@@ -162,3 +182,107 @@ const mapDispatchToProps = {
 } */
 
 export default connect(null, mapDispatchToProps)(LoginView);
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { Component } from "react";
+// import { connect } from "react-redux";
+// import authOperations from "../redux/auth/auth-operations";
+// import { Button } from "@mui/material";
+// import { TextField } from "@mui/material";
+// import { redirect as Redirect } from 'react-router-dom'
+
+// const styles = {
+//   form: {
+//     width: 320,
+//   },
+//   label: {
+//     display: "flex",
+//     flexDirection: "column",
+//     marginBottom: 15,
+//   },
+// };
+
+// class LoginView extends Component {
+//   state = {
+//     email: "",
+//     password: "",
+//   };
+
+//   handleChange = ({ target: { name, value } }) => {
+//     this.setState({ [name]: value });
+//   };
+
+//   handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     this.props.onLogin(this.state);
+
+//     this.setState({ email: "", password: "" });
+//   };
+
+//   render() {
+//     const { email, password } = this.state;
+//     const { isAuthenticated } = this.props;
+
+//     if (isAuthenticated) {
+//       return <Redirect to="/contacts" />;
+//     }
+
+//     return (
+//       <div style={{ marginTop: "35px" }}>
+//         <h1 style={{ marginBottom: "35px" }}>Login</h1>
+
+//         <form
+//           onSubmit={this.handleSubmit}
+//           style={styles.form}
+//           autoComplete="off"
+//         >
+//           <TextField
+//             style={{ marginBottom: "15px" }}
+//             label="E-mail:"
+//             type="email"
+//             name="email"
+//             value={email}
+//             onChange={this.handleChange}
+//           />
+//           <TextField
+//             label="Password:"
+//             type="password"
+//             name="password"
+//             value={password}
+//             onChange={this.handleChange}
+//           />
+//           <br />
+//           <Button
+//             style={{ marginTop: 25 }}
+//             type="submit"
+//             variant="contained"
+//             color="primary"
+//           >
+//             SIGN IN 🟩
+//           </Button>
+//         </form>
+//       </div>
+//     );
+//   }
+// }
+
+// const mapStateToProps = (state) => ({
+//   isAuthenticated: state.auth.isAuthenticated,
+// });
+
+// const mapDispatchToProps = {
+//   onLogin: authOperations.logIn,
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(LoginView);
