@@ -48,7 +48,7 @@ class ContactList extends Component {
   createList = () => {
     return this.props.contacts.map((contact) => {
       return (
-        <li key={contact.id} id={contact.id}>
+        <li key={contact.id} id={contact.id} className={css.contacts_list}>
           <Button
             // style={{ marginLeft: 25, height: 30, margin: 5 }}
             className={css.button_second}
