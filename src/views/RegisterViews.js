@@ -125,15 +125,16 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 import authOperations from "../redux/auth/auth-operations";
-import { Button } from '@mui/material';
-import { TextField } from '@mui/material';
-// import styles from "./RegisterViews.module.css";
+import { Button, IconButton, InputAdornment } from "@mui/material";
+import { TextField } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 class RegisterView extends Component {
   state = {
     name: "",
     email: "",
     password: "",
+    showPassword: true,
   };
 
   handleChange = ({ target: { name, value } }) => {
@@ -148,17 +149,22 @@ class RegisterView extends Component {
     this.setState({ name: "", email: "", password: "" });
   };
 
+  togglePasswordVisibility = () => {
+    this.setState((prevState) => ({
+      showPassword: !prevState.showPassword,
+    }));
+  };
+
   render() {
-    const { name, email, password } = this.state;
+    const { name, email, password, showPassword } = this.state;
 
     return (
-      <div style={{ marginTop: "35px", width: '320px' }}>
+      <div style={{ marginTop: "35px", width: "320px" }}>
         <h1 style={{ marginBottom: "35px" }}>Registration</h1>
 
         <form
           style={{ marginBottom: "15px" }}
           onSubmit={this.handleSubmit}
-          // style={styles.form}
           autoComplete="off"
         >
           <TextField
@@ -178,17 +184,32 @@ class RegisterView extends Component {
             value={email}
             onChange={this.handleChange}
           />
+
           <TextField
-            style={{ width: 300}}
+            style={{ width: 300 }}
             label="Password:"
-            type="password"
+            type={showPassword ? "password" : "text"}
             name="password"
             value={password}
             onChange={this.handleChange}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={this.togglePasswordVisibility}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
           />
+
           <br />
+
           <Button
-            // style={{ marginTop: 25 }}
             style={{ marginTop: "25px" }}
             type="submit"
             variant="contained"
@@ -201,13 +222,9 @@ class RegisterView extends Component {
     );
   }
 }
-//Short version
+
 const mapDispatchToProps = {
   onRegister: authOperations.register,
 };
-//Full version
-/* const mapDispatchToProps = dispatch=>{
-  onSubmit: (data)=>dispatch (authOperations.register(data))
-} */
 
 export default connect(null, mapDispatchToProps)(RegisterView);
