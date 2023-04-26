@@ -122,12 +122,126 @@
 // }
 
 
+// import { Component } from "react";
+// import { connect } from "react-redux";
+// import authOperations from "../redux/auth/auth-operations";
+// import { Button, IconButton, InputAdornment } from "@mui/material";
+// import { TextField } from "@mui/material";
+// import { Visibility, VisibilityOff } from "@mui/icons-material";
+
+// class RegisterView extends Component {
+//   state = {
+//     name: "",
+//     email: "",
+//     password: "",
+//     showPassword: true,
+//   };
+
+//   handleChange = ({ target: { name, value } }) => {
+//     this.setState({ [name]: value });
+//   };
+
+//   handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     this.props.onRegister(this.state);
+
+//     this.setState({ name: "", email: "", password: "" });
+//   };
+
+//   togglePasswordVisibility = () => {
+//     this.setState((prevState) => ({
+//       showPassword: !prevState.showPassword,
+//     }));
+//   };
+
+//   render() {
+//     const { name, email, password, showPassword } = this.state;
+
+//     return (
+//       <div style={{ marginTop: "35px", width: "320px" }}>
+//         <h1 style={{ marginBottom: "35px" }}>Registration</h1>
+
+//         <form
+//           style={{ marginBottom: "15px" }}
+//           onSubmit={this.handleSubmit}
+//           autoComplete="off"
+//         >
+//           <TextField
+//             style={{ marginBottom: "15px", width: 300 }}
+//             label="Name:"
+//             type="text"
+//             name="name"
+//             value={name}
+//             onChange={this.handleChange}
+//           />
+
+//           <TextField
+//             style={{ marginBottom: "15px", width: 300 }}
+//             label="E-mail:"
+//             type="email"
+//             name="email"
+//             value={email}
+//             onChange={this.handleChange}
+//           />
+
+//           <TextField
+//             style={{ width: 300 }}
+//             label="Password:"
+//             type={showPassword ? "password" : "text"}
+//             name="password"
+//             value={password}
+//             onChange={this.handleChange}
+//             InputProps={{
+//               endAdornment: (
+//                 <InputAdornment position="end">
+//                   <IconButton
+//                     aria-label="toggle password visibility"
+//                     onClick={this.togglePasswordVisibility}
+//                     edge="end"
+//                   >
+//                     {showPassword ? <VisibilityOff /> : <Visibility />}
+//                   </IconButton>
+//                 </InputAdornment>
+//               ),
+//             }}
+//           />
+
+//           <br />
+
+//           <Button
+//             style={{ marginTop: "25px" }}
+//             type="submit"
+//             variant="contained"
+//             color="primary"
+//           >
+//             SIGN UP ✅
+//           </Button>
+//         </form>
+//       </div>
+//     );
+//   }
+// }
+
+// const mapDispatchToProps = {
+//   onRegister: authOperations.register,
+// };
+
+// export default connect(null, mapDispatchToProps)(RegisterView);
+
+
+
+
+
+
 import { Component } from "react";
 import { connect } from "react-redux";
 import authOperations from "../redux/auth/auth-operations";
 import { Button, IconButton, InputAdornment } from "@mui/material";
 import { TextField } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class RegisterView extends Component {
   state = {
@@ -144,9 +258,13 @@ class RegisterView extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onRegister(this.state);
+    if (this.state.email.length < 6 || this.state.password.length < 6) {
+      toast.error("Ваш емейл або пароль надто короткий, будь ласка напишіть довший");
+    } else {
+      this.props.onRegister(this.state);
 
-    this.setState({ name: "", email: "", password: "" });
+      this.setState({ name: "", email: "", password: "" });
+    }
   };
 
   togglePasswordVisibility = () => {
@@ -218,6 +336,7 @@ class RegisterView extends Component {
             SIGN UP ✅
           </Button>
         </form>
+        <ToastContainer />
       </div>
     );
   }
