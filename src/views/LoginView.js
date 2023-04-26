@@ -369,13 +369,13 @@ e.preventDefault();
 const { email, password } = this.state;
 
 if (!email || !password) {
-  toast.error("Please enter email and password");
+  toast.error("Будь ласка напишіть вваш емейл і пароль");
   return;
 }
 
 try {
   await this.props.onLogin({ email, password });
-  toast.error("Invalid email or password");
+  toast.error("Неправильний емейл або пароль, будь ласка спробуйте ще раз");
   this.setState({ email: "", password: "" });
 } catch (error) {
   toast.error("Nothing");

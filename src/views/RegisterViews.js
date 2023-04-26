@@ -342,9 +342,7 @@ class RegisterView extends Component {
               ),
             }}
           />
-
           <br />
-
           <Button
             style={{ marginTop: "25px" }}
             type="submit"
