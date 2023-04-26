@@ -240,7 +240,7 @@ import authOperations from "../redux/auth/auth-operations";
 import { Button, IconButton, InputAdornment } from "@mui/material";
 import { TextField } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { toast, ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify"; //toast
 import "react-toastify/dist/ReactToastify.css";
 
 class RegisterView extends Component {
@@ -251,20 +251,38 @@ class RegisterView extends Component {
     showPassword: true,
   };
 
-  handleChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value });
+  handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const { name, email, password } = this.state;
+  
+    if (!name || !email || !password) {
+      toast.error("Будь ласка напишіть ім'я, емейл і пароль");
+      return;
+    }
+  
+    // Check if email is too short
+    if (email.length < 7) {
+      return toast.error("Ваш емейл має надто мало символів, будь ласка напишіть довший емейл");
+    }
+  
+    // Check if email starts with capital letter
+    if (email.charAt(0) === email.charAt(0).toUpperCase()) {
+      return toast.error("Будь ласка напишіть свій емейл з малесеньких літер");
+    }
+  
+    try {
+      await this.props.onRegister({ name, email, password });
+      toast.error("Ваш пароль не підходить, напишіть будь ласка інший");
+      this.setState({ name: "", email: "", password: "" });
+    } catch (error) {
+      toast.error("Invalid password, please try again");
+    }
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (this.state.email.length < 6 || this.state.password.length < 6) {
-      toast.error("Ваш емейл або пароль надто короткий, будь ласка напишіть довший");
-    } else {
-      this.props.onRegister(this.state);
-
-      this.setState({ name: "", email: "", password: "" });
-    }
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   };
 
   togglePasswordVisibility = () => {

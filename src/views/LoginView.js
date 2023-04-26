@@ -189,6 +189,142 @@
 
 
 
+// import React, { Component } from "react";
+// import { connect } from "react-redux";
+// import authOperations from "../redux/auth/auth-operations";
+// import { Button } from "@mui/material";
+// import { TextField } from "@mui/material";
+// import { IconButton, InputAdornment } from "@mui/material";
+// import { Visibility, VisibilityOff } from "@mui/icons-material";
+// import { toast } from "react-toastify";
+
+// const styles = {
+//   form: {
+//     width: 320,
+//   },
+//   label: {
+//     display: "flex",
+//     flexDirection: "column",
+//     marginBottom: 15,
+//   },
+// };
+
+// class LoginView extends Component {
+//   state = {
+//     email: "",
+//     password: "",
+//     showPassword: true,
+//   };
+
+//   handleChange = ({ target: { name, value } }) => {
+//     this.setState({ [name]: value });
+//   };
+
+  
+
+//   togglePasswordVisibility = () => {
+//     this.setState((prevState) => ({
+//       showPassword: !prevState.showPassword,
+//     }));
+//   };
+
+//   // handleSubmit = (e) => {
+//   //   e.preventDefault();
+
+//   //   this.props.onLogin(this.state);
+
+//   //   this.setState({ name: "", email: "", password: "" });
+//   // };
+  
+//   handleSubmit = async (e) => {
+//     e.preventDefault();
+  
+//     const { email, password } = this.state;
+  
+//     if (!email || !password) {
+//       toast.error("Please enter email and password");
+//       return;
+//     }
+  
+//     try {
+//       await this.props.onLogin({ email, password });
+//       toast.success("Login successful");
+//       this.setState({ email: "", password: "" });
+//     } catch (error) {
+//       toast.error("Invalid email or password");
+//     }
+//   };
+
+//   render() {
+//     const { email, password, showPassword } = this.state;
+
+//     return (
+//       <div style={{ marginTop: "35px" }}>
+//         <h1 style={{ marginBottom: "35px" }}>Login</h1>
+
+//         <form
+//           onSubmit={this.handleSubmit}
+//           style={styles.form}
+//           autoComplete="off"
+//         >
+//           <TextField
+//             style={{ marginBottom: "15px", width: 300 }}
+//             label="E-mail:"
+//             type="email"
+//             name="email"
+//             value={email}
+//             onChange={this.handleChange}
+//           />
+//           <TextField
+//             style={{ width: 300 }}
+//             label="Password:"
+//             type={showPassword ? "password" : "text"}
+//             name="password"
+//             value={password}
+//             onChange={this.handleChange}
+//             InputProps={{
+//               endAdornment: (
+//                 <InputAdornment position="end">
+//                   <IconButton
+//                     aria-label="toggle password visibility"
+//                     onClick={this.togglePasswordVisibility}
+//                     edge="end"
+//                   >
+//                     {showPassword ? <VisibilityOff /> : <Visibility />}
+//                   </IconButton>
+//                 </InputAdornment>
+//               ),
+//             }}
+//           />
+//           <br />
+//           <Button
+//             style={{ marginTop: 25 }}
+//             type="submit"
+//             variant="contained"
+//             color="primary"
+//           >
+//             SIGN IN ✅
+//           </Button>
+//         </form>
+//       </div>
+//     );
+//   }
+// }
+
+// const mapDispatchToProps = {
+//   onLogin: authOperations.logIn,
+// };
+
+// export default connect(null, mapDispatchToProps)(LoginView);
+
+
+
+
+
+
+
+
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import authOperations from "../redux/auth/auth-operations";
@@ -196,101 +332,114 @@ import { Button } from "@mui/material";
 import { TextField } from "@mui/material";
 import { IconButton, InputAdornment } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: "flex",
-    flexDirection: "column",
-    marginBottom: 15,
-  },
+form: {
+width: 320,
+},
+label: {
+display: "flex",
+flexDirection: "column",
+marginBottom: 15,
+},
 };
 
 class LoginView extends Component {
-  state = {
-    email: "",
-    password: "",
-    showPassword: true,
-  };
+state = {
+email: "",
+password: "",
+showPassword: true,
+};
 
-  handleChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value });
-  };
+handleChange = ({ target: { name, value } }) => {
+this.setState({ [name]: value });
+};
 
-  togglePasswordVisibility = () => {
-    this.setState((prevState) => ({
-      showPassword: !prevState.showPassword,
-    }));
-  };
+togglePasswordVisibility = () => {
+this.setState((prevState) => ({
+showPassword: !prevState.showPassword,
+}));
+};
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+handleSubmit = async (e) => {
+e.preventDefault();
 
-    this.props.onLogin(this.state);
+const { email, password } = this.state;
 
-    this.setState({ name: "", email: "", password: "" });
-  };
+if (!email || !password) {
+  toast.error("Please enter email and password");
+  return;
+}
 
-  render() {
-    const { email, password, showPassword } = this.state;
+try {
+  await this.props.onLogin({ email, password });
+  toast.error("Invalid email or password");
+  this.setState({ email: "", password: "" });
+} catch (error) {
+  toast.error("Nothing");
+}
+};
 
-    return (
-      <div style={{ marginTop: "35px" }}>
-        <h1 style={{ marginBottom: "35px" }}>Login</h1>
+render() {
+const { email, password, showPassword } = this.state;
 
-        <form
-          onSubmit={this.handleSubmit}
-          style={styles.form}
-          autoComplete="off"
-        >
-          <TextField
-            style={{ marginBottom: "15px", width: 300 }}
-            label="E-mail:"
-            type="email"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-          <TextField
-            style={{ width: 300 }}
-            label="Password:"
-            type={showPassword ? "password" : "text"}
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={this.togglePasswordVisibility}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-          <br />
-          <Button
-            style={{ marginTop: 25 }}
-            type="submit"
-            variant="contained"
-            color="primary"
-          >
-            SIGN IN ✅
-          </Button>
-        </form>
-      </div>
-    );
-  }
+return (
+  <div style={{ marginTop: "35px" }}>
+    <h1 style={{ marginBottom: "35px" }}>Login</h1>
+    <ToastContainer />
+    <form
+      onSubmit={this.handleSubmit}
+      style={styles.form}
+      autoComplete="off"
+    >
+      <TextField
+        style={{ marginBottom: "15px", width: 300 }}
+        label="E-mail:"
+        type="email"
+        name="email"
+        value={email}
+        onChange={this.handleChange}
+      />
+      <TextField
+        style={{ width: 300 }}
+        label="Password:"
+        type={showPassword ? "password" : "text"}
+        name="password"
+        value={password}
+        onChange={this.handleChange}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={this.togglePasswordVisibility}
+                edge="end"
+              >
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
+      />
+      <br />
+      <Button
+        style={{ marginTop: 25 }}
+        type="submit"
+        variant="contained"
+        color="primary"
+      >
+        SIGN IN ✅
+      </Button>
+    </form>
+  </div>
+);
+}
 }
 
 const mapDispatchToProps = {
-  onLogin: authOperations.logIn,
+onLogin: authOperations.logIn,
 };
 
 export default connect(null, mapDispatchToProps)(LoginView);
