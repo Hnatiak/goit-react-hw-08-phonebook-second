@@ -439,7 +439,7 @@ return (
 }
 
 const mapDispatchToProps = {
-onLogin: authOperations.logIn,
+  onLogin: authOperations.logIn,
 };
 
 export default connect(null, mapDispatchToProps)(LoginView);
