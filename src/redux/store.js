@@ -1,21 +1,3 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import contactsReducer from './contacts/contacts-slice';
-// import filterReducer from './filter/filter-reducer';
-// // import persistReducer from 'redux-persist/es/persistReducer';
-
-// export const store = configureStore({
-//   reducer: {
-//     contacts: contactsReducer,
-//     filter: filterReducer,
-
-//     // ====================================================================================
-//     // contacts: persistReducer(contactsPersistConfig, contactsReducer),
-//     // filter: filteReducer,
-//   },
-// });
-
-// export default store;
-
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import storage from "redux-persist/lib/storage";

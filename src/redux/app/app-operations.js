@@ -1,7 +1,7 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 import actions from "./app-actions";
 
-//ASYNC Version
 const fetchContacts = () => async (dispatch) => {
   dispatch(actions.fetchContactRequest());
   try {
@@ -22,9 +22,8 @@ const addContact = (contact) => async (dispatch) => {
     // Check if the new contact already exists in the list based on phone number
     const existingContact = data.find((c) => c.number === contact.number);
     if (existingContact) {
-      dispatch(
-        actions.addContactError("A contact with this phone number already exists!")
-      );
+      dispatch(actions.addContactError("A contact with this phone number already exists!"));
+      toast.error("A contact with this phone number already exists!");
       return;
     }
 
@@ -33,6 +32,7 @@ const addContact = (contact) => async (dispatch) => {
     dispatch(actions.addContactSuccess(response.data));
   } catch (error) {
     dispatch(actions.addContactError(error.message));
+    toast.error(error.message);
   }
 };
 
@@ -44,9 +44,11 @@ const deleteContact = (contactId) => (dispatch) => {
     .catch((error) => dispatch(actions.deleteContactError(error.message)));
 };
 
-
 const contactsOperations = {
-  fetchContacts, addContact, deleteContact 
-}
+  fetchContacts,
+  addContact,
+  deleteContact,
+};
 
 export default contactsOperations;
+
