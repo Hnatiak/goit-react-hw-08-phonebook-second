@@ -36,7 +36,7 @@ if (email.charAt(0) === email.charAt(0).toUpperCase()) {
 
 try {
   await dispatch(authOperations.register({ name, email, password }));
-  toast.error("Ваш пароль не підходить, напишіть будь ласка інший");
+  toast.error("Ваш пароль не підходить, напишіть будь ласка інший, пароль має містити і букви і цифри");
   setName("");
   setEmail("");
   setPassword("");
