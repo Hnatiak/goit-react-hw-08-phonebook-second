@@ -6,6 +6,8 @@ import Filter from "../components/Filter/Filter";
 import appActions from "../redux/app/app-actions";
 import appOperations from "../redux/app/app-operations";
 import selectors from "../redux/app/app-selectors";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ContactsView({
   isLoadingContacts,
@@ -30,6 +32,7 @@ function ContactsView({
       <ContactForm onSubmitData={formSubmitHandler} />
       <h1 style={{ marginBottom: 25 }}>Contacts</h1>
       <Filter setFilterToState={filterSet} />
+      <ToastContainer />
       <ContactList contacts={visibleArray} del={contactDelete} />
     </div>
   );

@@ -1,6 +1,7 @@
 import axios from "axios";
-import { toast } from "react-toastify";
 import actions from "./app-actions";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const fetchContacts = () => async (dispatch) => {
   dispatch(actions.fetchContactRequest());
@@ -22,8 +23,8 @@ const addContact = (contact) => async (dispatch) => {
     // Check if the new contact already exists in the list based on phone number
     const existingContact = data.find((c) => c.number === contact.number);
     if (existingContact) {
-      dispatch(actions.addContactError("A contact with this phone number already exists!"));
-      toast.error("A contact with this phone number already exists!");
+      dispatch(actions.addContactError("Такий номер телефону вже є"));
+      toast.warn("Такий номер телефону вже є");
       return;
     }
 

@@ -2,8 +2,8 @@ import { combineReducers } from "redux";
 import { createReducer } from "@reduxjs/toolkit";
 import actions from "./app-actions";
 import operations from "./app-operations";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 const contacts = createReducer([], {
   [actions.fetchContactSuccess]: (_, { payload }) => payload,
@@ -14,7 +14,6 @@ const contacts = createReducer([], {
   if (!nameArray.includes(payload.name)) {
     return [...state, payload];
   } else {
-    toast.warn("Цей контакт вже є у телефонній книзі!!!");
     return state;
   }
 },
