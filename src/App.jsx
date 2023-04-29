@@ -31,7 +31,7 @@ function App() {
       <AppBar />
       <Suspense fallback={<p>Loading...</p>}>
         <Routes>
-          <Route path="/" element={<HomePage />}>
+          <Route> 
             <Route
               index
               element={

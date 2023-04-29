@@ -11,3 +11,8 @@
 .title__color {
     color: var(--accent-text-color);
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+}

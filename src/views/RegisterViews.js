@@ -67,65 +67,67 @@ setShowPassword((prevState) => !prevState);
 };
 
 return (
-<div style={{ marginTop: "35px", width: "320px" }}>
-<h1 style={{ marginBottom: "35px" }}>Registration</h1>
-
-  <form
-    style={{ marginBottom: "15px" }}
-    onSubmit={handleSubmit}
-    autoComplete="off"
-  >
-    <TextField
-      style={{ marginBottom: "15px", width: 300 }}
-      label="Name:"
-      type="text"
-      name="name"
-      value={name}
-      onChange={handleChange}
-    />
-
-    <TextField
-      style={{ marginBottom: "15px", width: 300 }}
-      label="E-mail:"
-      type="email"
-      name="email"
-      value={email}
-      onChange={handleChange}
-    />
-
-      <TextField
-      style={{ width: 300 }}
-      label="Password:"
-      type={showPassword ? "password" : "text"}
-      name="password"
-      value={password}
-      onChange={handleChange}
-      InputProps={{
-        endAdornment: (
-          <InputAdornment position="end">
-            <IconButton
-              aria-label="toggle password visibility"
-              onClick={togglePasswordVisibility}
-              edge="end"
-            >
-              {showPassword ? <VisibilityOff /> : <Visibility />}
-            </IconButton>
-          </InputAdornment>
-        ),
-      }}
-    />
-    <br />
-    <Button
-      style={{ marginTop: "25px" }}
-      type="submit"
-      variant="contained"
-      color="primary"
-    >
-      SIGN UP ✅
-    </Button>
-  </form>
-  <ToastContainer />
-</div>
+  <div style={{ display: 'flex', justifyContent: 'center'}}>
+    <div style={{ marginTop: "35px", width: "320px" }}>
+    <h1 style={{ marginBottom: "35px" }}>Registration</h1>
+    
+      <form
+        style={{ marginBottom: "15px" }}
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
+        <TextField
+          style={{ marginBottom: "15px", width: 300 }}
+          label="Name:"
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+        />
+    
+        <TextField
+          style={{ marginBottom: "15px", width: 300 }}
+          label="E-mail:"
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
+    
+          <TextField
+          style={{ width: 300 }}
+          label="Password:"
+          type={showPassword ? "password" : "text"}
+          name="password"
+          value={password}
+          onChange={handleChange}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={togglePasswordVisibility}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+        <br />
+        <Button
+          style={{ marginTop: "25px" }}
+          type="submit"
+          variant="contained"
+          color="primary"
+        >
+          SIGN UP ✅
+        </Button>
+      </form>
+      <ToastContainer />
+    </div>
+  </div>
 );
 }
 

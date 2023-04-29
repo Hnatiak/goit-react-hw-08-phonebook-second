@@ -59,53 +59,55 @@ render() {
 const { email, password, showPassword } = this.state;
 
 return (
-  <div style={{ marginTop: "35px" }}>
-    <h1 style={{ marginBottom: "35px" }}>Login</h1>
-    <ToastContainer />
-    <form
-      onSubmit={this.handleSubmit}
-      style={styles.form}
-      autoComplete="off"
-    >
-      <TextField
-        style={{ marginBottom: "15px", width: 300 }}
-        label="E-mail:"
-        type="email"
-        name="email"
-        value={email}
-        onChange={this.handleChange}
-      />
-      <TextField
-        style={{ width: 300 }}
-        label="Password:"
-        type={showPassword ? "password" : "text"}
-        name="password"
-        value={password}
-        onChange={this.handleChange}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={this.togglePasswordVisibility}
-                edge="end"
-              >
-                {showPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-      />
-      <br />
-      <Button
-        style={{ marginTop: 25 }}
-        type="submit"
-        variant="contained"
-        color="primary"
+  <div style={{ display: 'flex', justifyContent: 'center'}}>
+    <div style={{ marginTop: "35px" }}>
+      <h1 style={{ marginBottom: "35px" }}>Login</h1>
+      <ToastContainer />
+      <form
+        onSubmit={this.handleSubmit}
+        style={styles.form}
+        autoComplete="off"
       >
-        SIGN IN ✅
-      </Button>
-    </form>
+        <TextField
+          style={{ marginBottom: "15px", width: 300 }}
+          label="E-mail:"
+          type="email"
+          name="email"
+          value={email}
+          onChange={this.handleChange}
+        />
+        <TextField
+          style={{ width: 300 }}
+          label="Password:"
+          type={showPassword ? "password" : "text"}
+          name="password"
+          value={password}
+          onChange={this.handleChange}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={this.togglePasswordVisibility}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+        <br />
+        <Button
+          style={{ marginTop: 25 }}
+          type="submit"
+          variant="contained"
+          color="primary"
+        >
+          SIGN IN ✅
+        </Button>
+      </form>
+    </div>
   </div>
 );
 }
